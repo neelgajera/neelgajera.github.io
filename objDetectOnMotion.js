@@ -44,7 +44,7 @@ function drawBoxes(objects) {
         let height = (object.height * drawCanvas.height) - y;
         drawCtx.fillText(object.class_name + " - " + object.track_id + "%", x + 5, y + 20);
         drawCtx.strokeRect(x, y, width, height);
-
+        console.log(object.class_name);
     });
 	objects.filter(object => object.line).forEach(object => {
 
@@ -56,7 +56,8 @@ function drawBoxes(objects) {
         drawCtx.moveTo(startx, starty);
         drawCtx.lineTo(endx, endy);
         drawCtx.stroke(); 
-  
+        console.log(object);
+		
 
     });
 	objects.filter(object => object.circle).forEach(object => {
@@ -66,6 +67,7 @@ function drawBoxes(objects) {
         drawCtx.beginPath();
         drawCtx.arc(x,y, 5, 0, 2 * Math.PI);
         drawCtx.fill(); 
+	console.log(object);
     });
 }
 
